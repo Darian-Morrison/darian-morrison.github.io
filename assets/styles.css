@@ -18,6 +18,12 @@ body{
 .card h1{
     color:#005493;
 }
+.card h2{
+    color:#005493;
+}
+.card h3{
+    color:#005493;
+}
 
 /* The hero image */
 .hero-image {
@@ -42,6 +48,10 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+}
+
+.hero-text h1{
+    font-size: 300%;
 }
 
 .fixed-top.scrolled {
