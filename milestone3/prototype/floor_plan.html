@@ -10,41 +10,37 @@
 	      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link href="../../assets/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
 
 	<title>AR Campus Navigator Prototype</title>
 </head>
 <body>
 <div class="bg"></div>
 <div class="container top">
-	<div class="row top-buffer">
-		<div class="col center-block">
-			<a href="search.html">
-				<div class="menu-item">
-					<span class="oi oi-magnifying-glass"> <br>Search</span>
-				</div>
+	<a class="back-arrow" href="search.html">
+		<span class="oi oi-arrow-thick-left">Back</span>
+	</a>
+	<div class="row">
+		<div id="DTB" class="card building-info full-width m-1">
+			<div class="card-header">
+				<h4>David Turpin Building</h4>
+			</div>
+			<div class="card-body">
+				Image
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-6">
+			<a id="directions" class="btn btn-primary" href="directions.html">
+				Map
 			</a>
 		</div>
+	</div>
+</div>
 
-	</div>
-</div>
-<div class="container bottom">
-	<div class="row bottom-buffer">
-		<div class="col col-6 center-block">
-			<a href="building.html">
-				<div class="menu-item">
-					<span class="oi oi-lg oi-home"> <br>Building ID</span>
-				</div>
-			</a>
-		</div>
-		<div class="col col-6 center-block">
-			<a href="map.html">
-				<div class="menu-item">
-					<span class="oi oi-map-marker"> <br>Map</span>
-				</div>
-			</a>
-		</div>
-	</div>
-</div>
+
 <img src="assets/images/UVic-Logo-White.png" style="position: absolute; bottom: 5px; left: 5px; width: 50%;">
 
 <!--</div>-->
@@ -61,7 +57,24 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 <script src="assets/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.building-search').select2({
+            width: '100%',
+            allowClear: true,
+            multiple: true,
+            maximumSelectionLength: 1,
+            placeholder: "Search...",
+            data: [
+                {id: "DTB", text: "David Turpin"},
+                {id: "ECS", text: "Engineering Computer Science"}
+            ]
+        });
+
+    });
+</script>
 </body>
 </html>

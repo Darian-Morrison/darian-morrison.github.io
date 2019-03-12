@@ -13,12 +13,6 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.logo-image{
-    background-image: url("images/UVic-Logo-White.png");
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
 .top,
 .bottom {
     position: fixed;
@@ -45,6 +39,23 @@ html, body{
     margin-right:auto;
     display:block;
 }
+.back-arrow{
+    width: 75px;
+    height: 25px;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    text-align: center;
+    justify-items: center;
+    display:block;
+}
+.small-text{
+    font-size: small;
+}
+
+.full-width{
+    width: 100%;
+}
 .top {
     top: 0;
 }
@@ -52,3 +63,5 @@ html, body{
 .bottom {
     bottom: 0;
 }
+
+.hidden { display: none; }

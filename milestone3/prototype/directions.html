@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../../assets/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+	<style>
+		/* Always set the map height explicitly to define the size of the div
+		 * element that contains the map. */
+		#map {
+			height: 100%;
+		}   q
+	</style>
+
+	<title>AR Campus Navigator Prototype</title>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container top">
+	<a class="back-arrow" href="menu.html">
+		<span class="oi oi-arrow-thick-left">Back</span>
+	</a>
+
+	<div class="row mt-1 mb-1">
+		<select class="start-location js-states form-control"></select>
+	</div>
+	<div class="row mt-1 mb-3">
+		<select class="end-location js-states form-control"></select>
+	</div>
+	<div class="row buttons-row hidden">
+		<div class="col col-6 center-block">
+			<a id="floor_plan" class="btn btn-primary" href="floor_plan.html">
+				Floor Plan
+			</a>
+		</div>
+		<div class="col col-6 center-block">
+			<a id="directions" class="btn btn-info" href="directions.html">
+				Directions
+			</a>
+		</div>
+	</div>
+	<div class="card" style="height:100%; width:100%;">
+		<div id="map"></div>
+
+	</div>
+</div>
+<img src="assets/images/UVic-Logo-White.png" style="position: absolute; bottom: 5px; left: 5px; width: 50%;">
+
+<!--</div>-->
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script src="assets/scripts.js"></script>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.4634, lng: -123.3117},
+            zoom: 15
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyKc3z0G1aCfwrR4BpEhth_GcxmFT3TE&callback=initMap"></script>
+<script>
+    $(document).ready(function () {
+
+        $('.start-location').select2({
+            width: '100%',
+            allowClear: true,
+            multiple: true,
+            maximumSelectionLength: 1,
+            placeholder: "Search...",
+            data: [
+                {id: "0", text: "Current Location"},
+                {id: "DTB", text: "David Turpin"}
+            ]
+        });
+        $('.start-location').val('0').change();
+        $('.end-location').select2({
+            width: '100%',
+            allowClear: true,
+            multiple: true,
+            maximumSelectionLength: 1,
+            placeholder: "Search...",
+            data: [
+                {id: "DTB", text: "David Turpin"},
+            ]
+        });
+        $('.end-location').val('DTB').change();
+    });
+</script>
+</body>
+</html>
