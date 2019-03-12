@@ -6,10 +6,16 @@ body, html {
 body{
     color:black;
     background-color:#002754;
+    overflow-x: hidden;
 }
 
 .nav-link{
     color: #F5AA1C;
+}
+
+.nav-link.special{
+    color: #F5AA1C;
+    background-color: #002754;
 }
 .nav-tabs {
     border-bottom: 0;
@@ -34,8 +40,8 @@ body{
     height: 50%;
 
     /* Position and center the image to scale nicely on all screens */
-    /*background-position: top;*/
-    background-position: 10% 12%;
+    background-position: top;
+    background-position: 10% 10%;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

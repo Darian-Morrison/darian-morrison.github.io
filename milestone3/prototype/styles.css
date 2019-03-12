@@ -1,0 +1,54 @@
+html, body{
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("images/menu-background.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo-image{
+    background-image: url("images/UVic-Logo-White.png");
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.top,
+.bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 50%;
+}
+.top-buffer{
+    margin-top: 150px;
+}
+.bottom-buffer{
+    margin-top: 50px;
+}
+
+.menu-item{
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    line-height: 100px;
+    margin-top:auto;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
