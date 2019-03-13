@@ -17,14 +17,19 @@
 		#map {
 			height: 100%;
 		}
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
 	</style>
 
 	<title>AR Campus Navigator Prototype</title>
 </head>
 <body>
-<div class="bg">
-	<div class="container top">
-		<div class="row">
+<div class="bg" style="width: 100%; height: 100%">
+	<div class="container" style="width: 100%; height: 100%">
+		<div class="row mb-1">
 			<div class="col col-6">
 				<a href="search.html">
 					<img src="assets/images/buttons/back1.png" height="30px">
@@ -59,8 +64,9 @@
 				</a>
 			</div>
 		</div>
-		<div class="card" style="height:125%; width:100%;">
+		<div class="card" style="height:60%; width:100%;">
 			<div id="map"></div>
+			<img id="directions-map" style="height:100%; width:100%;" src="assets/images/directions.png">
 		</div>
 	</div>
 </div>
@@ -91,10 +97,21 @@
         });
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyKc3z0G1aCfwrR4BpEhth_GcxmFT3TE&callback=initMap"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkyKc3z0G1aCfwrR4BpEhth_GcxmFT3TE&callback=initMap">
+</script>
 <script>
-    $(document).ready(function () {
+    function toggle_map(end_selected, start_selected) {
+        if (end_selected && start_selected) {
+			$('#map').hide();
+			$('#directions-map').show()
+        }else{
+            $('#map').show();
+            $('#directions-map').hide()
+        }
+    }
 
+    $(document).ready(function () {
         $('.start-location').select2({
             width: '100%',
             allowClear: true,
@@ -118,6 +135,29 @@
             ]
         });
         $('.end-location').val('ECS').change();
+
+
+        var end_selected = 1;
+        var start_selected = 1;
+        $('#map').hide();
+        $('#directions-map').show()
+        $('.start-location').on('select2:unselect', function (e) {
+            start_selected = 0;
+            toggle_map(end_selected, start_selected);
+        });
+        $('.start-location').on('select2:select', function (e) {
+            start_selected = 1;
+            toggle_map(end_selected, start_selected);
+        });
+        $('.end-location').on('select2:unselect', function (e) {
+            end_selected = 0;
+            toggle_map(end_selected, start_selected);
+        });
+        $('.end-location').on('select2:select', function (e) {
+            end_selected = 1;
+            toggle_map(end_selected, start_selected);
+        });
+
         var directions = 1;
 
         $('#toggle-to-and-from').click(function () {

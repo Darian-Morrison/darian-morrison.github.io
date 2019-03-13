@@ -12,51 +12,46 @@
 	<link rel="stylesheet" href="assets/styles.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 
+
 	<title>AR Campus Navigator Prototype</title>
 </head>
 <body>
-<div class="bg">
+<div class="building_id_bg">
 	<div class="container top">
-		<a href="search.html">
+		<a href="menu.html">
 			<img src="assets/images/buttons/back1.png" height="25px">
 		</a>
-		<div class="row">
-			<div id="DTB" class="card building-info full-width m-1">
-				<div class="card-header">
-					<h4>David Turpin Building</h4>
-				</div>
-				<div class="card-body">
-					<div id="demo" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ul class="carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"></li>
-							<li data-target="#demo" data-slide-to="1"></li>
-						</ul>
-						<!-- The slideshow -->
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img class="carousel-image" src="assets/images/first-floor.png" alt="First-Floor">
-							</div>
-							<div class="carousel-item">
-								<img class="carousel-image" src="assets/images/second-floor.png"  alt="Second-Floor">
-							</div>
-						</div>
-						<!-- Left and right controls -->
-						<a class="carousel-control-prev"href="#demo" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next"    href="#demo" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
 
-					</div>
-				</div>
+		<div id="ECS" class="card building-info full-width m-1 hidden">
+			<div class="card-header">
+				<h4>Engineering/Computer Science Building</h4>
+			</div>
+			<div class="card-body small-text">
+				<p>
+					The Engineering/Computer Science building was completed in June 2006. Designed by Terence Williams,
+					the leading-edge structure was completed within three years and on budget.
+				</p>
+				<p>
+					Sustainable design features including optimized natural light, a recycled water plumbing system and
+					natural landscaping. The overall building is 25% more energy efficient than the Model National
+					Energy Code for Buildings. It was the second campus building to earn Gold-level status in the
+					Leadership in Energy and Environmental Design (LEED) Green Building Rating System.
+				</p>
+				<p>
+					<strong>Source: </strong><a href="https://www.uvic.ca/home/about/campus-info/maps/maps/ecs.php"
+					                            target="_blank">www.uvic.ca</a>
+				</p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col col-6">
-				<a id="directions" class="btn btn-primary" href="directions.html">
-					Map
+		<div class="row buttons-row hidden">
+			<div class="col col-6 text-center">
+				<a id="floor_plan" class="btn btn-primary" href="floor_plan.html">
+					Floor Plan
+				</a>
+			</div>
+			<div class="col col-6 text-center">
+				<a id="directions" class="btn btn-info" href="directions.html">
+					Directions
 				</a>
 			</div>
 		</div>
@@ -81,19 +76,13 @@
 
 <script src="assets/scripts.js"></script>
 <script>
-    $(document).ready(function () {
-        $('.building-search').select2({
-            width: '100%',
-            allowClear: true,
-            multiple: true,
-            maximumSelectionLength: 1,
-            placeholder: "Search...",
-            data: [
-                {id: "DTB", text: "David Turpin"},
-                {id: "ECS", text: "Engineering Computer Science"}
-            ]
-        });
+	function show_building_info() {
+        $('#ECS').removeClass('hidden');
+        $('.buttons-row').removeClass('hidden');
+    }
 
+    $(document).ready(function () {
+        setTimeout(show_building_info, 7500);
     });
 </script>
 </body>
