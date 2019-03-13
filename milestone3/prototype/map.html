@@ -101,10 +101,12 @@
     function toggle_map(end_selected, start_selected) {
         if (end_selected && start_selected) {
             $('#map').hide();
-            $('#directions-map').show()
+            $('#directions-map').show();
+            $('#ar-mode-btn').show();
         }else{
             $('#map').show();
-            $('#directions-map').hide()
+            $('#directions-map').hide();
+            $('#ar-mode-btn').hide();
         }
     }
 
@@ -136,7 +138,8 @@
         var end_selected = 0;
         var start_selected = 0;
         $('#map').show();
-        $('#directions-map').hide()
+        $('#directions-map').hide();
+        $('#ar-mode-btn').hide();
         $('.start-location').on('select2:unselect', function (e) {
             start_selected = 0;
             toggle_map(end_selected, start_selected);
