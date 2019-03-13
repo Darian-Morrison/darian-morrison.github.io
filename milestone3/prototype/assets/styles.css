@@ -1,9 +1,8 @@
 html, body{
     height: 100%;
 }
-.bg {
-    /* The image used */
-    background-image: url("images/menu-background.jpg");
+.menu-bg {
+    background-image: url("images/mainscreen.png");
 
     /* Full height */
     height: 100%;
@@ -13,25 +12,45 @@ html, body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.top,
-.bottom {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 50%;
+.bg {
+    /* The image used */
+    background-image: url("images/generic-bkgd.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.top-buffer{
-    margin-top: 150px;
+.home-row {
+    height:33.33%;
 }
-.bottom-buffer{
-    margin-top: 50px;
+.row-buffer{
+    padding: 40px 0;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+.carousel-image{
+    max-height: 100%;
+    max-width: 100%;
+    border-left: white 5px;
+    border-right: white 5px;
+}
+
+.carousel-control-prev-icon:after {
+    font-size: 55px;
+    color: black;
 }
 
 .menu-item{
-    width: 75px;
-    height: 75px;
-    border: 1px solid black;
-    background-color: white;
     text-align: center;
     line-height: 100px;
     margin-top:auto;
