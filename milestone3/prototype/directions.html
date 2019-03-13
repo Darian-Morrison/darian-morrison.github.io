@@ -100,10 +100,10 @@
             allowClear: true,
             multiple: true,
             maximumSelectionLength: 1,
-            placeholder: "Search...",
+            placeholder: "Start Location",
             data: [
                 {id: "0", text: "Current Location"},
-                {id: "DTB", text: "David Turpin"}
+                {id: "ECS", text: "Engineering/Computer Science"}
             ]
         });
         $('.start-location').val('0').change();
@@ -112,12 +112,12 @@
             allowClear: true,
             multiple: true,
             maximumSelectionLength: 1,
-            placeholder: "Search...",
+            placeholder: "End Location",
             data: [
-                {id: "DTB", text: "David Turpin"},
+                {id: "ECS", text: "Engineering/Computer Science"},
             ]
         });
-        $('.end-location').val('DTB').change();
+        $('.end-location').val('ECS').change();
         var directions = 1;
 
         $('#toggle-to-and-from').click(function () {
