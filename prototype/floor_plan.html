@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../../assets/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
+	<title>AR Campus Navigator Prototype</title>
+</head>
+<body>
+<div class="bg">
+	<div class="container top">
+		<a href="search.html">
+			<img src="assets/images/buttons/back1.png" height="25px">
+		</a>
+		<span style="color: white; font-size: 18px">Floor Plan</span>
+		<div class="row">
+			<div id="ECS" class="card building-info full-width m-1">
+				<div class="card-header">
+					<h4>Engineering/Computer Science Building</h4>
+				</div>
+				<div class="card-body">
+					<div id="demo" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"></li>
+							<li data-target="#demo" data-slide-to="1"></li>
+							<li data-target="#demo" data-slide-to="2"></li>
+							<li data-target="#demo" data-slide-to="3"></li>
+							<li data-target="#demo" data-slide-to="4"></li>
+							<li data-target="#demo" data-slide-to="5"></li>
+						</ul>
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<h5 class="text-center">First Floor</h5>
+								<img class="carousel-image" src="assets/images/first-floor.png" alt="First-Floor">
+							</div>
+							<div class="carousel-item">
+								<h5 class="text-center">Second Floor</h5>
+								<img class="carousel-image" src="assets/images/second-floor.png"  alt="Second-Floor">
+							</div>
+							<div class="carousel-item">
+								<h5 class="text-center">Third Floor</h5>
+								<img class="carousel-image" src="assets/images/third-floor.png"  alt="Third-Floor">
+							</div>
+							<div class="carousel-item">
+								<h5 class="text-center">Fourth Floor</h5>
+								<img class="carousel-image" src="assets/images/fourth-floor.png"  alt="Fourth-Floor">
+							</div>
+							<div class="carousel-item">
+								<h5 class="text-center">Fifth Floor</h5>
+								<img class="carousel-image" src="assets/images/fifth-floor.png"  alt="Fifth-Floor">
+							</div>
+							<div class="carousel-item">
+								<h5 class="text-center">Sixth Floor</h5>
+								<img class="carousel-image" src="assets/images/sixth-floor.png"  alt="Sixth-Floor">
+							</div>
+						</div>
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev"href="#demo" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next"    href="#demo" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-6">
+				<a id="directions" class="btn btn-primary" href="directions.html">
+					Map
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--</div>-->
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script src="assets/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.building-search').select2({
+            width: '100%',
+            allowClear: true,
+            multiple: true,
+            maximumSelectionLength: 1,
+            placeholder: "Search...",
+            data: [
+                {id: "DTB", text: "David Turpin"},
+                {id: "ECS", text: "Engineering Computer Science"}
+            ]
+        });
+
+    });
+</script>
+</body>
+</html>

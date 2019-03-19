@@ -1,0 +1,110 @@
+html, body{
+    height: 100%;
+}
+.menu-bg {
+    background-image: url("images/mainscreen.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.building_id_bg {
+    /* The image used */
+    background-image: url("images/AR-movie.gif");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ar_mode_bg {
+    /* The image used */
+    background-image: url("images/AR-nav.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg {
+    /* The image used */
+    background-image: url("images/generic-bkgd.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.home-row {
+    height:33.33%;
+}
+.row-buffer{
+    padding: 40px 0;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+.carousel-image{
+    max-height: 100%;
+    max-width: 100%;
+    border-left: white 5px;
+    border-right: white 5px;
+}
+
+.carousel-control-prev-icon:after {
+    font-size: 55px;
+    color: black;
+}
+
+.menu-item{
+    text-align: center;
+    line-height: 100px;
+    margin-top:auto;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+.back-arrow{
+    width: 75px;
+    height: 25px;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+    text-align: center;
+    justify-items: center;
+    display:block;
+}
+.small-text{
+    font-size: small;
+}
+
+.full-width{
+    width: 100%;
+}
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.hidden { display: none; }
